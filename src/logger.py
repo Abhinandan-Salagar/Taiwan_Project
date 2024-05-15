@@ -19,6 +19,7 @@ def create_log_path(module_name: str) -> str:
     current_date = dt.date.today()
     # create a logs folder in the root directory
     root_path = Path(__file__).parent.parent
+    print(root_path)
     # create path for logs folder
     log_dir_path = root_path / 'logs'
     log_dir_path.mkdir(exist_ok=True)
@@ -26,6 +27,7 @@ def create_log_path(module_name: str) -> str:
     # create folder for a specific module
     module_log_path = log_dir_path / module_name
     module_log_path.mkdir(exist_ok=True,parents=True)
+    print(module_log_path)
     # convert the date to str
     current_date_str = current_date.strftime("%d-%m-%Y")  # ! error at this point if not fixed
     # create log files based on current date
